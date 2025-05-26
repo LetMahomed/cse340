@@ -4,3 +4,80 @@
 *:after {
   box-sizing: border-box;
 }
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Header styles */
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+.siteName a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+#tools a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+#tools a:hover {
+  color: #007BFF;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #e0e0e0;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav li {
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav li:hover {
+  color: #007BFF;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #666;
+}
