@@ -4,7 +4,7 @@
 *:after {
   box-sizing: border-box;
 }
-/* Reset and base styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +18,6 @@ body {
   color: #333;
 }
 
-/* Header styles */
 #top-header {
   display: flex;
   justify-content: space-between;
@@ -26,6 +25,7 @@ body {
   padding: 1rem 2rem;
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
 }
 
 .siteName a {
@@ -45,7 +45,6 @@ body {
   color: #007BFF;
 }
 
-/* Navigation styles */
 nav {
   background-color: #e0e0e0;
   padding: 0.75rem 2rem;
@@ -56,6 +55,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 nav li {
@@ -68,7 +68,6 @@ nav li:hover {
   color: #007BFF;
 }
 
-/* Footer styles */
 footer {
   margin-top: 2rem;
   padding: 1rem 2rem;
@@ -80,4 +79,117 @@ footer {
 footer p {
   font-size: 0.9rem;
   color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  #top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  .siteName a {
+    font-size: 1.25rem;
+  }
+
+  #tools a {
+    font-size: 0.95rem;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-box {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background-color: rgba(255, 255, 255, 0.6); 
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #007BFF;
+  max-width: 250px;
+}
+
+.floating-box h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.floating-box p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #000;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #000;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav li {
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+nav li:hover {
+  color: #00bfff;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    height: auto;
+  }
+
+  .floating-box {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
