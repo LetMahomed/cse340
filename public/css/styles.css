@@ -166,12 +166,16 @@ nav ul {
   flex-wrap: wrap;
 }
 
-nav li {
-  font-weight: 500;
-  cursor: pointer;
-  color: white;
-  transition: color 0.3s ease;
+nav ul {
+  display: flex;
+  justify-content: center; /* Centers the list horizontally */
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
+
 
 nav li:hover {
   color: #00bfff;
