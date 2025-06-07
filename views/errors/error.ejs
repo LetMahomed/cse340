@@ -1,8 +1,8 @@
-<%# Assignment 3, Basic Error Handling activity %>
+<!-- views/errors/error.ejs -->
 <% if (title) { %>
-<h1><%= title %></h1>
-<% } else {
-  res.redirect('/')
-} %> 
-
-<%- message %> 
+  <h1><%= title %></h1>
+  <% } else {
+    res.redirect('/')
+  } %>
+  
+  <%- message %>
