@@ -1,9 +1,8 @@
-<%- include('../partials/header') %>
-
+<%# Assignment 3, Basic Error Handling activity %>
+<% if (title) { %>
 <h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %> 
 
-<div class="error-message">
-  <%- Error %> <!-- This is the unescaped block -->
-</div>
-
-<%- include('../partials/footer') %>
+<%- message %> 
