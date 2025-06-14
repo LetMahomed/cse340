@@ -16,7 +16,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
   if (data.length > 0) {
     className = data[0].classification_name
   }
-  res.render(".inventory/classification", {
+  res.render("inventory/classification", {
     title: className + " vehicles",
     nav,
     grid,
@@ -34,7 +34,7 @@ invCont.buildDetail = async function (req, res, next) {
   let nav = await utilities.getNav()
   const vehicleTitle =
     vehicle.inv_year + " " + vehicle.inv_make + " " + vehicle.inv_model
-  res.render("./inventory/detail", {
+  res.render("inventory/detail", {
     title: vehicleTitle,
     nav,
     message: null,
@@ -106,11 +106,14 @@ invCont.buildManagement = async function (req, res) {
 invCont.buildAddInventory = async function (req, res) {
   let nav = await utilities.getNav()
   let classificationList = await utilities.buildClassificationList()
+  let message = req.flash("notice") 
   res.render("inventory/add-inventory", {
     title: "Add New Vehicle",
     nav,
     classificationList,
     errors: null,
+    message 
+
   })
 }
 
