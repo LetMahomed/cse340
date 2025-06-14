@@ -1,0 +1,48 @@
+<%# CSE Motors - Login Page %>
+
+<h1>Login to Your Account</h1>
+
+<%- messages() %>
+
+<section id="loginContainer">
+  <p>Welcome back! Please log in to access your account.</p>
+
+  <form id="loginForm" action="/account/login" method="post">
+    <fieldset>
+      <label for="account_email">Email</label>
+      <input 
+        type="email" 
+        name="account_email" 
+        id="account_email" 
+        required
+      >
+
+      <label for="account_password">Password</label>
+      <div id="passwordHelp">
+        Password must be at least <strong>12 characters</strong> and include at least 
+        <strong>1 uppercase letter</strong>, <strong>1 number</strong>, and 
+        <strong>1 special character</strong>.
+      </div>
+      <input 
+        type="password" 
+        name="account_password" 
+        id="account_password" 
+        required
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
+      >
+
+      <button id="pswdBtn" type="submit">Login</button>
+    </fieldset>
+  </form>
+
+  <p>Don't have an account? <a href="/account/register">Register here</a></p>
+</section>
+
+<!-- Optional styling for the password reminder -->
+<style>
+  #passwordHelp {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+  }
+</style>
