@@ -1,30 +1,26 @@
-<h1><%= title %></h1>
-
-    <!-- Flash messages -->
-    <%- messages() %>
-
-    <!-- Server-side validation errors -->
-    <% if (errors && errors.length > 0) { %>
-      <ul class="notice">
-        <% errors.forEach(error => { %>
-          <li><%= error.msg %></li>
-        <% }) %>
-      </ul>
-    <% } %>
-
-    <!-- Add Classification Form -->
-    <form action="/inv/add-classification" method="post">
-      <label for="classification_name">Classification Name:</label>
-      <input 
-        type="text" 
-        id="classification_name" 
-        name="classification_name" 
-        required 
-        pattern="^[A-Za-z0-9]+$"
-        title="Only letters and numbers. No spaces or special characters."
-        value="<%= typeof classification_name !== 'undefined' ? classification_name : '' %>"
-      >
-
-      <button type="submit">Add Classification</button>
+<%# Unit 4, Assignment 4, Task 2 %>
+<% if (title) {%>
+  <h1><%= title %></h1>
+  <%} else {res.redirect('/')} %>
+  
+  <%- messages() %>
+  
+  <% if (errors) { %>
+  <ul class="message warning">
+    <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+    <%  }) %>
+  </ul>
+  <% } %>
+  
+  <div id="registerContainer">
+    <p>Field is required.</p>
+    <form class="formSpread" action="/inv/addClassification" method="post">
+      <fieldset>
+        <label for="carClassification">Classification Name</label>
+        <p>Name must be alphabetic characters only.</p>
+        <input type="text" name="classification_name" id="carClassification" required pattern="[a-zA-Z]*" value="<%= locals.classification_name %>">
+        <button type="submit">Add Classification</button>
+      </fieldset>
     </form>
-
+  </div>

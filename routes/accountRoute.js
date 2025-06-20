@@ -1,52 +1,50 @@
-// Import required modules
-const express = require("express");
-const router = express.Router();
-const regValidate = require('../utilities/account-validation')
+/* ************************************
+ *  Account routes
+ *  Unit 4, deliver login view activity
+ *  ******************************** */
+// Needed Resources
+const express = require("express")
+const router = new express.Router()
+const accountController = require("../controllers/accountController")
+const utilities = require("../utilities")
+const regValidate = require("../utilities/account-validation")
 
 
-// Import utilities (for example, error handling middleware)
-const utilities = require("../utilities");
+/* ************************************
+ *  Deliver Login View
+ *  Unit 4, deliver login view activity
+ *  ******************************** */
+router.get("/login", utilities.handleErrors(accountController.buildLogin))
 
-// Import the accounts controller
-const accountController = require("../controllers/accountController");
+/* ************************************
+ *  Deliver Registration View
+ *  Unit 4, deliver registration view activity
+ *  ******************************** */
+router.get("/register", utilities.handleErrors(accountController.buildRegister))
 
-// Route for login page
-router.get(
-  "/login",
-  utilities.handleErrors(accountController.buildLogin)
-)
-router.get(
-  "/register",
-  (req, res, next) => {
-    console.log("✅ /account/register route reached");
-    next();
-  },
-  utilities.handleErrors(accountController.buildRegister)
-);
 
-// Route for "My Account" page
-router.get(
-  "/", 
-  utilities.handleErrors(accountController.buildAccount)
-);
-// Process the registration data
 router.post(
   "/register",
   regValidate.registrationRules(),
   regValidate.checkRegData,
-  utilities.handleErrors(accountController.accountRegister)
+  utilities.handleErrors(accountController.registerAccount)
 )
-// Process the login attempt
+
+
+/* ************************************
+ *  Process Login
+ *  Unit 4, stickiness activity
+ *  Modified in Unit 5, Login Process activity
+ *  ******************************** */
+
 router.post(
   "/login",
-  (req, res) => {
-    res.status(200).send('login process')
-  }
+  regValidate.loginRules(),
+  regValidate.checkLoginData,
+  utilities.handleErrors(accountController.loginAccount)
 )
 
 
 
 
-
-
-module.exports = router;
+module.exports = router
