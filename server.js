@@ -15,7 +15,7 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 
 // images 
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, "public")))
 
 /* ***********************
  * View Engine and Templates

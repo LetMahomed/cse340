@@ -157,7 +157,7 @@ body {
   background-color: rgb(248, 224, 228);
   min-height: 400px;
   padding: 1rem;
-  background-image: url("../images/site/wreck.jpg");
+  background-image: url("../images/wreck.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode:soft-light;
@@ -182,7 +182,7 @@ hr {
 }
 
 #hero {
-  background-image: url("/images/vehicles/delorean.jpg");
+  background-image: url("/images/delorean.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
