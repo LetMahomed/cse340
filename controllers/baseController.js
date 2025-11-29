@@ -2,7 +2,7 @@ const utilities = require("../utilities")
 const baseController = {}
 
 /* ***************************
- *  Build home view
+ *  Build Home view with MVC
  * ************************** */
 baseController.buildHome = async function (req, res) {
   const nav = await utilities.getNav()
