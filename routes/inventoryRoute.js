@@ -20,6 +20,28 @@ router.get(
   utilities.handleErrors(invController.throwError)
 )
 
-
-
+/* ****************************************
+ * Build add-classification View Route
+ **************************************** */
+router.get(
+ "/newClassification"
+)
+/* ****************************************
+ * Process add-classification Route
+ **************************************** */
+router.post(
+  "/addClassification"
+) 
+/* ****************************************
+ * Build add-vehicle View Route
+ **************************************** */
+router.get(
+  "/newVehicle",
+)
+/* ****************************************
+ * Process add-vehicle Route
+ **************************************** */
+router.post(
+  "/addInventory",
+)
 module.exports = router;
